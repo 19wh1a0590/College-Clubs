@@ -1,0 +1,86 @@
+<!-- <html>
+  <head>
+
+  </head>
+<body>
+  <header>
+<nav class="navbar fixed-top navbar-expand-lg navbar-black bg-white">
+ 
+  <div class="container">
+    <div class="logo-box">
+      <a href="/">
+        <img class="logo" src="assets/images/club.jpg">
+      </a>
+    </div>
+      <button (click)=toggleDisplayDivIf() class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+          aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+     
+      <div [ngClass]="!isShowDivIf ? 'responsive__active' : 'responsive__inactive'" class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ms-auto">
+          
+              <li (click)=toggleDisplayDivIf()  class="nav-item" routerLinkActive="active">
+                <a href="homepage" ><img src="assets/images/hom.png">  </a>
+              </li>
+              <li (click)=toggleDisplayDivIf() class="nav-item" routerLinkActive="active">
+                <a href="login"><img src="assets/images/logout.png"> Login</a>
+              </li>
+              
+          </ul>
+      </div>
+  </div>
+</nav>
+
+
+</header>
+<div class="slideshow">
+     
+</div>
+</body>
+</html> -->
+
+
+<html>
+  <head>
+    <title></title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+    $(function () {
+    $('.fadein img:gt(0)').hide();
+    setInterval(function () {
+      $('.fadein :first-child').fadeOut().next('img').fadeIn().end().appendTo('.fadein');
+    }, 4000);
+  });
+    </script>
+
+
+  </head>
+  <body>
+    <header>
+     <div class="container">
+        <div class="logo-box">
+          <a href="/">
+            <img class="logo" src="assets/images/club.jpg">
+          </a>
+        </div>
+          <nav >
+            <ul>
+              <li><a href="/" ><img src="assets/images/hom.png"> </a></li>
+
+              <li><a href="login" ><img src="assets/images/logout.png"> </a></li>
+              <!-- <li><a href="profile" ><img src="assets/images/profile.gif"> </a></li>
+             
+              <li><a href="setting" ><img src="assets/images/settings.png"> </a></li> 
+              <li><a href="/"><img src="assets/images/logout.png"> </a></li>  -->
+              
+           </ul>
+        </nav>
+      </div>
+    </header>
+    
+   
+  </body>
+</html>
+

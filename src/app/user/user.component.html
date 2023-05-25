@@ -1,0 +1,41 @@
+<button type="button" routerLink="/user" class="btn btn-secondary" style="margin-left:34%">Home</button>
+
+<button type="button" routerLink="/admin" class="btn btn-secondary" style="margin-left:4%">Add event</button>
+
+<button type="button" routerLink="/admincertificate" class="btn btn-secondary" style="margin-left:4%">Add certificate</button>
+
+<div class="row">
+    <div class="cc">
+
+        <table class="table table-striped table-white">
+            <thead>
+                <tr>
+                    <!-- <th scope="col" style="font-size:19px;">Id</th> -->
+
+                    <th scope="col" style="font-size:19px;">username</th>
+                    <th scope="col" style="font-size:19px;">email</th>
+                    <th scope="col" style="font-size: 19px;">Password</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr scope="row" *ngFor="let use of allMembers">
+
+                    <!-- <td>
+                        <h6>{{use._id}}</h6>
+                    </td> -->
+                    <td>
+                        <h6>{{ use.username }}</h6>
+                    </td>
+					<td>
+                        <h6>{{use.email}}</h6>
+                    </td>
+                    <td>
+                        <h6>{{ use.password }}</h6>
+                    </td>
+
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div> 

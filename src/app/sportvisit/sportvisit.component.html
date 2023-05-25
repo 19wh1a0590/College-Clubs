@@ -1,0 +1,290 @@
+<!-- <app-practice></app-practice> -->
+<!-- <app-navbar></app-navbar> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style media="screen">
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        /* height: 1000vh; */
+        /* background: url(waves.jpg) no-repeat; */
+        /* background-image: url("src/assets/images/background.jpg"); */
+        background-size: 100% 140px;
+        background-position: 0 510px;
+        /* overflow: hidden; */
+        font-family: arial;
+    }
+
+    header {
+        /* position: static; */
+        /* top: 10px; */
+        left: 0;
+        height: 80px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    header .navbar {
+        transition: .3s linear;
+    }
+
+    header .logo {
+        display: flex;
+        align-items: center;
+    }
+
+    header .logo>img {
+        height: 50px;
+        margin: 0 10px
+    }
+
+    header .navbar ul {
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        width: 600px;
+        justify-content: space-around;
+    }
+
+    header .navbar ul li {
+        font-size: 18px;
+    }
+
+    header .navbar ul li:hover {
+        color: rgb(126, 151, 113);
+        cursor: pointer;
+    }
+
+    input {
+        display: none;
+    }
+
+    label {
+        z-index: 2;
+        position: absolute;
+        top: 30px;
+        right: 10px;
+        cursor: pointer;
+        display: none;
+    }
+
+    label  span {
+        display: block;
+        height: 3px;
+        width: 30px;
+        background: green;
+        margin: 5px 0;
+        transition: .3s;
+    }
+
+    label span:nth-child(1) {
+        margin-left: 20px;
+    }
+
+    label  span:nth-child(2) {
+        width: 50px;
+    }
+
+    #toggle:checked~label>span:nth-child(1) {
+        background: rgb(8, 8, 8);
+        transform: rotateZ(45deg);
+        width: 30px;
+        margin-top: 10px;
+    }
+
+    #toggle:checked~label>span:nth-child(2) {
+        background: rgb(0, 0, 0);
+        transform: rotateZ(-45deg);
+        width: 30px;
+        margin-top: -8px;
+        margin-left: 19px;
+    }
+
+    #toggle:checked~header .navbar {
+        left: 0;
+    }
+
+    @media (max-width:978px) {
+        label {
+            display: block;
+        }
+
+        header .navbar {
+            height: 100vh;
+            width: 100vw;
+            position: fixed;
+            top: 0;
+            left: 100%;
+            background: rgb(168, 236, 168);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header .navbar ul {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-flow: column wrap;
+        }
+
+        header .navbar ul li {
+            margin: 10px 0;
+            font-size: 40px;
+            color: rgb(0, 0, 0);
+        }
+
+        header .navbar ul li:hover {
+            background: rgb(25, 114, 65);
+            border-radius: 50px;
+            padding: 0 50px;
+            transition: .3s
+        }
+
+        header {
+            z-index: 1;
+            /* justify-content: center; */
+        }
+    }
+</style>
+</head>
+<body>
+  <input type="checkbox" id="toggle">
+    <label for="toggle">
+        <span></span>
+        <span></span>
+    </label>
+    <header>
+        <div class="logo">
+            <img src="assets/images/club.jpg" alt="">
+            {{user1.username}}
+        </div>
+        <div class="navbar">
+            <ul>
+              <li routerLink="/homepage">Home</li>
+              <li routerLink="/event">Event</li>
+              <li routerLink="/achieve">Certificate</li>
+              <li routerLink="/profile">Profile</li>
+              <!-- <li routerLink="/setting">Settings</li> -->
+              <li routerLink="/">Logout</li>
+            </ul>
+        </div>
+        <!-- <app-event></app-event> -->
+    </header>
+
+
+
+  <div class="first">
+    <div class="container">
+        <div class="image">
+          <img src="assets/images/gr.png">
+        </div>
+    
+
+        <div class="text">
+          <h4>As education gives name, fame and money, sports gives us sound mind 
+            and sound body. With this intention BVRITH provides sports and games.</h4>
+            <button routerLink="/comment" class="join" type="button" class="btn btn-success">Chat</button>
+        
+          </div>
+
+      </div>
+      <br>
+      <br>
+</div>
+
+
+<div class="second">
+<div class="text2">
+      <h2>Courts</h2>
+    </div>
+<div>
+  <br>
+  <br>
+
+    <main class="container">
+
+        <section class="card">
+          <div class="product-image">
+            <img class="float" src="assets/images/kkk.png" alt="OFF-white Red Edition" draggable="false" />
+          </div>
+         
+          <div class="product-info">
+            <h5>Running Track</h5><br>
+            <h5>Badminton Courts-2</h5><br>
+            <h5>Basket Ball Court-1</h5><br>
+            <h5>Volley Ball Court-1</h5>
+
+        
+          </div>
+        </section>
+        <section class="card card-blue">
+          <div class="product-image">
+            <img class="float" src="assets/images/ball_s.png" alt="OFF-white Blue Edition" draggable="false" />
+          </div>
+          <div class="product-info">
+            <h5>Throw Ball Court-1</h5><br>
+            <h5>Kabaddi Court-1</h5><br>
+            <h5>Kho Kho Court-1</h5><br>
+            <h5>Tennicoit Court-1</h5>
+
+          </div>
+        </section>
+        
+      </main>
+      <br>
+      <br>
+    </div>
+</div>
+<br>
+<br>
+
+
+<div class="third">
+<div class="text3">
+<h2>Competitions and Achievements</h2>
+    </div>
+    <br>
+    <br>
+   
+<div class="wrap animate pop">
+  <div class="overlay">
+    <div class="overlay-content animate slide-left delay-2">
+      <h3 class="animate slide-left pop delay-4">BVRITH</h3>
+      <p class="animate slide-left pop delay-5" style="color: black; margin-bottom: 2.5rem;">Competitions<br>Achievements</p>
+    </div>
+    <div class="image-content animate slide delay-5"></div>
+       
+  </div>
+    <div class="text5">
+      <h6>Nipunya Inter-College Tournament</h6><br>
+      <h6>Annual Day Sports Meet</h6><br>
+      <h6>Inter-College Tournaments</h6><br>
+      <h6>JNTU Inter-College Tournament</h6><br>
+      <h6>India Open Inter-College Tournament</h6><br>
+      <h6>Jahnavi - 2015 Sounth Zone Shuttle Badminton</h6><br>
+      <h6>2016 - All India shuttle badminton event</h6>
+    </div>
+</div>
+</div>
+    <!-- <br>
+    <br>
+    <br> -->
+
+    
+  
+
+    
+  </body>
+  </html>

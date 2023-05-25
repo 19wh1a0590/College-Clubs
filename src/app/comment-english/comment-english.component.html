@@ -1,0 +1,266 @@
+<html>
+
+<head>
+    <title>Chat Box UI Design</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+
+
+    <!-- Import this CDN to use icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <style media="screen">
+      /* * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      } */
+      body {
+          
+          background-size: 100% 140px;
+          background-position: 0 510px;
+          font-family: arial;
+      }
+  
+      header {
+          /* position: static; */
+          /* top: 10px; */
+          left: 0;
+          height: 80px;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+      }
+  
+      header .navbar {
+          transition: .3s linear;
+      }
+  
+      header .logo {
+          display: flex;
+          align-items: center;
+      }
+  
+      header .logo>img {
+          height: 50px;
+          margin: 0 10px
+      }
+  
+      header .navbar ul {
+          list-style-type: none;
+          display: flex;
+          align-items: center;
+          width: 600px;
+          justify-content: space-around;
+      }
+  
+      header .navbar ul li {
+          font-size: 18px;
+      }
+  
+      header .navbar ul li:hover {
+          color: rgb(126, 151, 113);
+          cursor: pointer;
+      }
+  
+      input {
+          display: none;
+      }
+  
+      label {
+          z-index: 2;
+          position: absolute;
+          top: 30px;
+          right: 10px;
+          cursor: pointer;
+          display: none;
+      }
+  
+      label  span {
+          display: block;
+          height: 3px;
+          width: 30px;
+          background: green;
+          margin: 5px 0;
+          transition: .3s;
+      }
+  
+      label span:nth-child(1) {
+          margin-left: 20px;
+      }
+  
+      label  span:nth-child(2) {
+          width: 50px;
+      }
+  
+      #toggle:checked~label>span:nth-child(1) {
+          background: rgb(8, 8, 8);
+          transform: rotateZ(45deg);
+          width: 30px;
+          margin-top: 10px;
+      }
+  
+      #toggle:checked~label>span:nth-child(2) {
+          background: rgb(0, 0, 0);
+          transform: rotateZ(-45deg);
+          width: 30px;
+          margin-top: -8px;
+          margin-left: 19px;
+      }
+  
+      #toggle:checked~header .navbar {
+          left: 0;
+      }
+  
+      @media (max-width:978px) {
+          label {
+              display: block;
+          }
+  
+          header .navbar {
+              height: 100vh;
+              width: 100vw;
+              position: fixed;
+              top: 0;
+              left: 100%;
+              background: rgb(168, 236, 168);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+          }
+  
+          header .navbar ul {
+              height: 100vh;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              flex-flow: column wrap;
+          }
+  
+          header .navbar ul li {
+              margin: 10px 0;
+              font-size: 40px;
+              color: rgb(0, 0, 0);
+          }
+  
+          header .navbar ul li:hover {
+              background: rgb(25, 114, 65);
+              border-radius: 50px;
+              padding: 0 50px;
+              transition: .3s
+          }
+  
+          header {
+              z-index: 1;
+              /* justify-content: center; */
+          }
+      }
+  </style>
+</head>
+
+<body>
+  <input type="checkbox" id="toggle">
+    <label for="toggle">
+        <span></span>
+        <span></span>
+    </label>
+    <header>
+        <div class="logo">
+            <img src="assets/images/club.jpg" alt="">
+           <h6> {{user1.username}} </h6>
+        </div>
+        <div class="navbar">
+            <ul>
+              <li routerLink="/homepage">Home</li>
+              <li routerLink="/event">Event</li>
+              <li routerLink="/achieve">Certificate</li>
+              <li routerLink="/profile">Profile</li>
+              <li routerLink="/setting">Settings</li>
+              <li routerLink="/">Logout</li>
+            </ul>
+        </div>
+        <!-- <app-event></app-event> -->
+    </header>
+    <!-- Main container -->
+    <div class="container">
+
+        <!-- msg-header section starts -->
+        <div class="msg-header">
+            <div class="container1">
+
+                <img src="assets/images/ec.png" class="msgimg">
+                <div class="active ">
+                    <!-- <p>{{user1.username}}</p> -->
+                    <h4>English Club</h4>
+                    
+                </div>
+
+            </div>
+
+
+        </div>
+        <!-- msg-header section ends -->
+
+        <!-- Chat inbox  -->
+        <div class="chat-page">
+            <div class="msg-inbox">
+                <div class="chats">
+
+                    <!-- Message container -->
+                    <div class="msg-page">
+
+                        <!-- Incoming messages -->
+
+                        <div class="received-chats">
+                            <div class="received-chats-img">
+                                <!-- <img src="user2.png"> -->
+
+                            </div>
+                            <div *ngFor="let com of allCpp_commentse">
+                            <div class="received-msg">
+                               
+                                    <!-- <span class="time">18:06 PM | July 24 </span> -->
+                                    
+                                      <div class="received-msg-inbox">
+
+                                        <p style="color:rgb(223, 0, 63)">{{com.username}}
+                                          <br> <em>{{com.comment}}</em></p>
+
+                                      <!-- <span class="text2">{{com.username}}</span> -->
+                                    <!-- </div> -->
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                        <!-- Outgoing messages -->
+                       
+                  
+
+
+                    </div>
+                </div>
+
+                <!-- msg-bottom section -->
+
+
+                <div class="msg-bottom">
+                  <form #ccForm="ngForm" (ngSubmit)="ccAddComment_e(ccForm.value)">
+
+                    <div class="input-group">
+
+                        <input type="text"  ngModel name="comment" #comment="ngModel" placeholder="+ Add a comment" class="form-control" placeholder="Write message...">
+
+                        <span class="input-group-text send-icon" type="submit"><i class="bi bi-send"></i>
+                            </span>
+
+                    </div>
+                    </form>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+

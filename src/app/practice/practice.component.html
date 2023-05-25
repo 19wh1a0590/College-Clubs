@@ -1,0 +1,58 @@
+<html>
+  <head>
+
+  </head>
+<body>
+  <header>
+<!-- <nav class="navbar fixed-top navbar-expand-sm navbar-black bg-white"> -->
+ 
+  <nav class="fixed-top navbar navbar-light bg-white navbar-expand moodle-has-zindex">
+  <!-- navbar fixed-top navbar-light bg-light -->
+  <div class="container">
+    <div class="logo-box">
+      <a href="/">
+        <img class="logo" src="assets/images/club.jpg">
+      </a>
+    </div>
+      <button (click)=toggleDisplayDivIf() class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+          aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- *ngIf="!isShowDivIf" --- hide and show -->
+      <div [ngClass]="!isShowDivIf ? 'responsive__active' : 'responsive__inactive'" class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ms-auto">
+          
+              <li (click)=toggleDisplayDivIf()  class="nav-item" routerLinkActive="active">
+                <a routerLink="/homepage"  routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact:true}"><img src="assets/images/hom.png">
+   
+                  </a>
+              </li>
+              <li (click)=toggleDisplayDivIf() class="nav-item" routerLinkActive="active">
+                <a routerLink="/event" routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact:true}"><img src="assets/images/cal.png"> </a>
+              </li>
+              <li (click)=toggleDisplayDivIf() class="nav-item" routerLinkActive="active">
+                <a routerLink="/profile" routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact:true}"><img src="assets/images/profile.gif"> </a>
+              </li>
+              <li (click)=toggleDisplayDivIf() class="nav-item" routerLinkActive="active">
+                <a routerLink="/setting" routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact:true}"><img src="assets/images/settings.png"> </a>
+              </li>
+              <li (click)=toggleDisplayDivIf() class="nav-item" routerLinkActive="active">
+                <a href="/"><img src="assets/images/logout.png"> </a>
+              </li>
+              
+          </ul>
+      </div>
+  </div>
+</nav>
+<!-- <router-outlet></router-outlet> -->
+
+</header>
+<div class="slideshow">
+     
+</div>
+</body>
+</html>

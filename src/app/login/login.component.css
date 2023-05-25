@@ -1,0 +1,34 @@
+.gradient-custom {
+	/* fallback for old browsers */
+	background: white;
+
+	/* Chrome 10-25, Safari 5.1-6 */
+	background: -webkit-linear-gradient(to right, rgb(244, 244, 245), rgb(249, 250, 251));
+
+	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: linear-gradient(to right, rgb(255, 243, 243), rgb(251, 251, 251))
+}
+
+/* .btn {
+	display: block;
+	align-items: center;
+	right: 3cm;
+	width: 50%;
+	height: 42px;
+	border-radius: 25px;
+	outline: none;
+	border: none;
+	background-color: white;
+	background-size: 200%;
+	font-size: 1.2rem;
+	color: black;
+	font-family: 'Poppins', sans-serif;
+	text-transform: uppercase;
+	margin: 1rem 0;
+	cursor: pointer;
+	transition: .5s;
+} */
+/* .btn{
+	display: block;
+
+} */

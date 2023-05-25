@@ -1,0 +1,112 @@
+.card-head {
+
+  font-size: 0.4cm;
+  font-weight: 500;
+  color: black;
+  margin-bottom: 1.5rem;
+}
+
+  @media (max-width: 979px) {
+    body {
+      padding-top: 0px;
+    }
+  }
+  
+  .grid {
+    display: grid;
+    width: 30em;
+    /* padding-left: 50%; */
+    padding-top: 1%;
+    padding-bottom: 1%;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    align-items: center;
+    /* position: static; */
+  }
+  
+  .grid-item {
+    background-color: teal;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    /* box-shadow: 0 3rem 6rem rgb(163, 236, 240); */
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  
+  .grid-item:hover {
+    transform: translateY(-0.5%);
+    /* box-shadow: 0 4rem 8rem rgba(0, 0, 0, 0.5); */
+  }
+  
+  .card-img {
+    display: block;
+    width: 100%;
+    height: 11rem;
+    object-fit: contain;
+    
+  }
+  
+  .card-content {
+    padding: 3rem;
+  }
+  
+  .card-header {
+      padding-left: 7%;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: teal;
+    margin-bottom: 1.5rem;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    line-height: 1.7;
+    color: #3d3d3d;
+    margin-bottom: 2.5rem;
+  }
+  
+  
+  
+  .card-btn {
+    display: block;
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1rem;
+    text-align: center;
+    color: black;
+    
+    background-image: "assets/images/kk.gif";
+    border: none;
+    border-radius: 0.1rem;
+    transition: 0.2s;
+    cursor: pointer;
+    letter-spacing: 0.1rem;
+  }
+ 
+  
+  .card-btn:hover,
+  .card-btn:active {
+    background-color: rgb(163, 236, 240);
+  }
+  
+  .card-btn:hover span,
+  .card-btn:active span {
+    margin-left: 1.5rem;
+  }
+  .card-btn span {
+    margin-left: 1rem;
+    transition: 0.2s;
+  }
+  
+  
+
+
+  
+  @media only screen and (max-width: 60em) {
+    body {
+      padding: 3rem;
+    }
+  
+    
+  }
+  

@@ -1,0 +1,281 @@
+<!-- <app-practice></app-practice> -->
+<!-- <app-navbar></app-navbar> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style media="screen">
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        /* height: 1000vh; */
+        /* background: url(waves.jpg) no-repeat; */
+        /* background-image: url("src/assets/images/background.jpg"); */
+        background-size: 100% 140px;
+        background-position: 0 510px;
+        /* overflow: hidden; */
+        font-family: arial;
+    }
+
+    header {
+        /* position: static; */
+        /* top: 10px; */
+        left: 0;
+        height: 80px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    header .navbar {
+        transition: .3s linear;
+    }
+
+    header .logo {
+        display: flex;
+        align-items: center;
+    }
+
+    header .logo>img {
+        height: 50px;
+        margin: 0 10px
+    }
+
+    header .navbar ul {
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        width: 600px;
+        justify-content: space-around;
+    }
+
+    header .navbar ul li {
+        font-size: 18px;
+    }
+
+    header .navbar ul li:hover {
+        color: rgb(126, 151, 113);
+        cursor: pointer;
+    }
+
+    input {
+        display: none;
+    }
+
+    label {
+        z-index: 2;
+        position: absolute;
+        top: 30px;
+        right: 10px;
+        cursor: pointer;
+        display: none;
+    }
+
+    label span {
+        display: block;
+        height: 3px;
+        width: 30px;
+        background: green;
+        margin: 5px 0;
+        transition: .3s;
+    }
+
+    label span:nth-child(1) {
+        margin-left: 20px;
+    }
+
+    label span:nth-child(2) {
+        width: 50px;
+    }
+
+    #toggle:checked~label>span:nth-child(1) {
+        background: rgb(8, 8, 8);
+        transform: rotateZ(45deg);
+        width: 30px;
+        margin-top: 10px;
+    }
+
+    #toggle:checked~label>span:nth-child(2) {
+        background: rgb(0, 0, 0);
+        transform: rotateZ(-45deg);
+        width: 30px;
+        margin-top: -8px;
+        margin-left: 19px;
+    }
+
+    #toggle:checked~header .navbar {
+        left: 0;
+    }
+
+    @media (max-width:978px) {
+        label {
+            display: block;
+        }
+
+        header .navbar {
+            height: 100vh;
+            width: 100vw;
+            position: fixed;
+            top: 0;
+            left: 100%;
+            background: rgb(168, 236, 168);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header .navbar ul {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-flow: column wrap;
+        }
+
+        header .navbar ul li {
+            margin: 10px 0;
+            font-size: 40px;
+            color: rgb(0, 0, 0);
+        }
+
+        header .navbar ul li:hover {
+            background: rgb(25, 114, 65);
+            border-radius: 50px;
+            padding: 0 50px;
+            transition: .3s
+        }
+
+        header {
+            z-index: 1;
+            /* justify-content: center; */
+        }
+    }
+</style>
+</head>
+<body>
+  <input type="checkbox" id="toggle">
+    <label for="toggle">
+        <span></span>
+        <span></span>
+    </label>
+    <header>
+        <div class="logo">
+            <img src="assets/images/club.jpg" alt="">
+            {{user1.username}}
+        </div>
+        <div class="navbar">
+            <ul>
+              <li routerLink="/homepage">Home</li>
+              <li routerLink="/event">Event</li>
+              <li routerLink="/achieve">Certificate</li>
+              <li routerLink="/profile">Profile</li>
+              <!-- <li routerLink="/setting">Settings</li> -->
+              <li routerLink="/">Logout</li>
+            </ul>
+        </div>
+        <!-- <app-event></app-event> -->
+    </header>
+    <div>
+        <img class="first" src = "assets/images/ART.gif">
+    </div>
+    <button routerLink="/comment-english" class="button">Chat</button>
+    <br>
+    <br>
+    <br>
+
+    <div class="wrapper">
+        <!-- <h2>Parallax Flipping Cards</h2> -->
+        <div class="cols">
+                  <div class="col" ontouchstart="this.classList.toggle('hover');">
+                      <div class="container">
+                          <div class="front">
+                            
+                              <div class="inner">
+                                  <p style="color: black;">Hey people</p>
+                    <span style="color: black;">Wanna know a secret</span>
+                              </div>
+                          </div>
+                          <div class="back">
+                              <div class="inner">
+                                <p style="font-weight: bold; color: black; font-size: 15px;">
+                                    Hey, relax English is just a language which is used widely and oftenly in many
+                                    countries and work places.
+                                    Dont just make a big deal about talking in English.
+                                    You need confidence not the language to face a stage.
+                                    Just chill, build some confidence and take care of your english basics,
+                                    I know there can be a lot of mistakes in this secret too, LOL. 
+                                </p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+               
+                 
+                 
+              </div>
+       </div>
+
+<div class="last">
+
+          <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<h1 style="color: black;">Toast Masters</h1>
+<div class="cards">
+  <div class="card">
+    <h2 class="card-title">Features</h2>
+    <img src="assets/images/fea.png" alt="">
+    <p class="card-desc" style="font-size: 16px;">
+        The club conducts meeting every week on <strong>Saturday</strong>, that is 
+        <strong>monthly four times</strong> so that all members get speech slots.
+        <strong>Every meeting will have four segments: </strong><br>
+        1. Prepared speeches <br>
+        2. Impromptus speeches<br>
+        3. Evaluation<br>
+        4. Taking roles of meeting
+
+    </p>
+  </div>
+  <div class="card">
+    <h2 class="card-title">Outcomes</h2>
+    <img src="https://media.istockphoto.com/id/1381218042/vector/completed-checklist-on-clipboard-successful-completion-of-business-tasks-and-goals.jpg?s=612x612&w=0&k=20&c=Az-ahMIcRysiXcCpbgLt0aoo2s7MkRssZc1e43wgnVw=" alt="">
+    <p class="card-desc"  style="font-size: 16px; color: rgb(195, 36, 108);">
+       1. Improve your <strong>public speaking skills</strong> <br>
+2. Gain <strong>self- confidence and self- awareness</strong><br>
+3. <strong>Practice</strong> writing speeches and presenting in a group setting<br>
+4. Gain a competitive advantage in the workplace<br>
+5. Enjoy unlimited <strong>personal growth</strong><br>
+6. Maximize potential<br>
+7. Build <strong>leadership skills</strong><br>
+8. Work on networking in a small and supportive environment<br>
+9.Receive regular and  constructive <strong>feedback</strong> from peers with similar interests as you<br>
+10. Access to the pathways learning experience , which is an education program that allows to leverage over 300 practices workplace skill, including: <br>
+(a) Iterview preparation <br>
+(b) Online meeting management <br>
+(c) Leadership development <br>
+(d) Project management <br>
+    </p>
+  </div>
+  <div class="card">
+    <h2 class="card-title">Achievements</h2>
+    <img src="assets/images/ea.jpg" alt="">
+    <p class="card-desc"style="font-size: 16px; " > 
+        BVRIT HYDERABAD Toastmasters’ Club members developed communication competencies and proved their leadership  skills by way of winning a plethora of awards in their journey.
+
+Some of them are- <strong>President Distinguished Club Award, Area Director, Club Coach, Sponsoring members, Pathways Century Award, Pathways Focal, Golden Feature Award, Pristine Award etc.</strong>
+    </p>
+  </div>
+</div>
+</div>
+          
+    </body>
+    </html>
+
+
+
+  

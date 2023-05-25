@@ -1,0 +1,231 @@
+<!-- <app-english></app-english> -->
+<!-- <app-practice></app-practice> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style media="screen">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            height: 100vh;
+            padding-top: 5%;
+            padding-left: 6%;
+            /* background: url(waves.jpg) no-repeat; */
+            background-size: 100% 140px;
+            background-position: 0 510px;
+            overflow: hidden;
+            font-family: arial;
+        }
+
+        header {
+            position: fixed;
+            top: 10px;
+            left: 0;
+            height: 60px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header .navbar {
+            transition: .3s linear;
+        }
+
+        header .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        header .logo>img {
+            height: 50px;
+            margin: 0 10px
+        }
+
+        header .navbar ul {
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            width: 600px;
+            justify-content: space-around;
+        }
+
+        header .navbar ul li {
+            font-size: 18px;
+        }
+
+        header .navbar ul li:hover {
+            color: rgb(126, 151, 113);
+            cursor: pointer;
+        }
+
+        #toggle{
+            display: none;
+        }
+
+        label {
+            z-index: 2;
+            position: absolute;
+            top: 30px;
+            right: 10px;
+            cursor: pointer;
+            display: none;
+        }
+
+        label span {
+            display: block;
+            height: 3px;
+            width: 30px;
+            background: green;
+            margin: 5px 0;
+            transition: .3s;
+        }
+
+        label span:nth-child(1) {
+            margin-left: 20px;
+        }
+
+        label span:nth-child(2) {
+            width: 50px;
+        }
+
+        #toggle:checked~label>span:nth-child(1) {
+            background: rgb(8,8,8);
+            transform: rotateZ(45deg);
+            width: 30px;
+            margin-top: 10px;
+        }
+
+        #toggle:checked~label>span:nth-child(2) {
+            background: rgb(0,0,0);
+            transform: rotateZ(-45deg);
+            width: 30px;
+            margin-top: -8px;
+            margin-left: 19px;
+        }
+
+        #toggle:checked~header .navbar {
+            left: 0;
+        }
+
+        @media (max-width:978px) {
+            label {
+                display: block;
+            }
+
+            header .navbar {
+                height: 100vh;
+                width: 100vw;
+                position: fixed;
+                top: 0;
+                left: 100%;
+                background:  rgb(168, 236, 168);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            header .navbar ul {
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-flow: column wrap;
+            }
+
+            header .navbar ul li {
+                margin: 10px 0;
+                font-size: 40px;
+                color: black;
+            }
+
+            header .navbar ul li:hover {
+                background: forestgreen;
+                border-radius: 50px;
+                padding: 0 50px;
+                transition: .3s
+            }
+
+            header {
+                z-index: 1;
+                /* justify-content: center; */
+            }
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="toggle">
+    <label for="toggle">
+        <span></span>
+        <span></span>
+    </label>
+    <header>
+        <div class="logo">
+            <img src="assets/images/club.jpg" alt="">
+            {{user1.username}}
+        </div>
+        <div class="navbar">
+            <ul>
+                <li routerLink="/homepage">Home</li>
+                <li routerLink="/event">Event</li>
+                <li routerLink="/achieve">Certificate</li>
+                <li routerLink="/profile">Profile</li>
+                <!-- <li routerLink="/setting">Settings</li> -->
+                <li routerLink="/">Logout</li>
+            </ul>
+        </div>
+        <!-- <app-event></app-event> -->
+    </header>
+
+    
+
+<div class="container">
+<div class="row m-5 no-gutters shadow-lg">
+<div class="col-md-6 d-none d-md-block">
+<img src="assets/images/event.png" class="img-fluid" style="min-height:100%;" />
+</div>
+
+<div class="col-md-6 bg-white p-5">
+  <div class="card">
+  
+  <input type="submit" class="input2" value="List of events" (click)='seeEvents()'>
+
+  <table class="table">
+      <thead>
+          <tr>
+              <!-- <th scope="col" style="font-size:19px;">Id</th> -->
+
+              <th scope="col" style="font-size:19px;">Event Name</th>
+              <th scope="col" style="font-size:19px;">Date</th>
+              <!-- <th scope="col" style="font-size: 19px;">Delete Event</th> -->
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let u of allEvents">
+              <!-- <td>
+                  <h4>{{u._id}}</h4>
+              </td> -->
+              <td>
+                  <h6>{{ u.eventname }}</h6>
+              </td>
+              <td>
+                  <h6>{{ u.date}}</h6>
+              </td>
+              
+             
+          </tr>
+      </tbody>
+  </table>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!-- <app-navbar1></app-navbar1> -->
+<button type="button" routerLink="/profile" class="btn btn-outline-dark">Go to profile</button>
+
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                    <div class="card-body p-5 text-center">
+                        <form action="index.html">
+                           
+                                Email id:<h1 class="card-head" style="color: wheat;">{{user1.email}}</h1>
+                                <form #uForm="ngForm" (ngSubmit)="updateUser(uForm.value)" onsubmit="return validateForm()" class="form-group"
+                                    novalidate>
+
+                                    <div class="form-outline form-white mb-4">
+                                        <label class="form-label" for="typePasswordX">Old Password</label>
+                                        <input type="password" placeholder="Type your old Password" ngModel
+                                            name="password" #password=ngModel class="form-control" required>
+
+                                    </div>
+
+
+                                    <div class="form-outline form-white mb-4">
+                                        <label class="form-label" for="typePasswordX">New Password</label>
+                                        <input type="newpassword" placeholder="Type your new Password" ngModel
+                                            name="newpassword" #newpassword=ngModel class="form-control" required>
+
+                                    </div>
+                                    <div *ngIf="password.errors?.['required'] && password.touched" style="color:red; margin-right: 19px;">* Password invalid</div>
+				<!-- <div *ngIf="username.errors?.minlenth && username.touched"style="color:red">Enter data in Password field..</div> -->
+			  
+				
+				  <div *ngIf="newpassword.errors?.['required'] && newpassword.touched"style="color:red">* New Password is invalid</div>
+                  <button type="submit" class="btn btn-outline-warning">Update</button>
+                                </form>
+                            </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

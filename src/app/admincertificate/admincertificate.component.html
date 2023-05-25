@@ -1,0 +1,93 @@
+<!-- <button routerLink="/admin">Back to add events</button> -->
+<button type="button" routerLink="/user" class="btn btn-secondary" style="margin-left:34%">Home</button>
+
+<button type="button" routerLink="/admin" class="btn btn-secondary" style="margin-left:4%">Add event</button>
+
+<button type="button" routerLink="/admincertificate" class="btn btn-secondary" style="margin-left:4%">Add certificate</button>
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                    <div class="card-body p-5 text-center">
+                        <form action="index.html">
+                            <form #cppForm="ngForm" (ngSubmit)="cppAddCer(cppForm.value)" class="form-group"
+                                novalidate>
+                                <div class="mb-md-5 mt-md-4 pb-5">
+                                <h2 class="fw-bold mb-2 text-uppercase">Add Certificate</h2>
+                                <div class="form-outline form-white mb-9">
+                                    <label class="form-label" for="typeEmailX">Email</label>
+                                    <input type="text" placeholder="Enter Email" ngModel name="Email"
+                                        #Email=ngModel class="form-control" required>
+                                </div>
+                                <div class="form-outline form-white mb-4">
+                                    <label class="form-label" for="type">Name</label>
+                                    <input type="text" placeholder="Username" ngModel name="username" #username=ngModel
+                                        class="form-control" required>
+                                </div>
+                                <div class="form-outline form-white mb-4">
+                                    <label class="form-label" for="type">Event name</label>
+                                    <input type="text" placeholder="Event name" ngModel name="ename" #ename=ngModel
+                                        class="form-control" required>
+
+                                </div>
+
+                                <div class="form-outline form-white mb-4">
+                                <label class="form-label" for="cars">Choose Certificate</label>
+                                <select type="text"  ngModel name="cer" #cer=ngModel
+                                class="form-control" required >
+                                  <option value="Merit">Merit</option>
+                                  <option value="Participation">Participation</option>
+                                </select>
+                                </div>
+
+                                <div class="form-outline form-white mb-4">
+                                    <label class="form-label" for="cars">Choose year</label>
+                                    <select type="text"  ngModel name="year" #year=ngModel
+                                    class="form-control" required >
+                                      <option value="First">1</option>
+                                      <option value="Second">2</option>
+                                      <option value="Third">3</option>
+                                      <option value="Fourth">4</option>
+                                      
+                                    </select>
+                                    </div>
+
+                                    <div class="form-outline form-white mb-4">
+                                        <label class="form-label" for="cars">Choose rank</label>
+                                        <select type="text"  ngModel name="rank" #rank=ngModel
+                                        class="form-control" required >
+                                          <option value="First">1</option>
+                                          <option value="Second">2</option>
+                                          <option value="Third">3</option>
+                                          <option value="Participant">-</option>
+                                          
+                                        </select>
+                                        </div>
+
+                                <div *ngIf="Email.errors?.['required'] && Email.touched"
+                                    style="color:white; margin-right: 19px;">* Event name required</div>
+                                <!-- <div *ngIf="username.errors?.minlenth && username.touched"style="color:red">Enter data in Password field..</div> -->
+
+
+                                <div *ngIf="username.errors?.['required'] && username.touched" style="color:white">* Date is
+                                    required</div>
+
+
+                                <button class="btn btn-outline-light btn-lg px-5" type="submit">Add</button>
+                                <button class="btn btn-outline-light btn-lg px-5" type="reset">Reset</button>
+                                </div>
+                            </form>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+

@@ -1,0 +1,258 @@
+<!-- <app-practice></app-practice> -->
+<!-- <app-navbar></app-navbar> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style media="screen">
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        /* height: 1000vh; */
+        /* background: url(waves.jpg) no-repeat; */
+        /* background-image: url("src/assets/images/background.jpg"); */
+        background-size: 100% 140px;
+        background-position: 0 510px;
+        /* overflow: hidden; */
+        font-family: arial;
+    }
+
+    header {
+        /* position: static; */
+        /* top: 10px; */
+        left: 0;
+        height: 80px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    header .navbar {
+        transition: .3s linear;
+    }
+
+    header .logo {
+        display: flex;
+        align-items: center;
+    }
+
+    header .logo>img {
+        height: 50px;
+        margin: 0 10px
+    }
+
+    header .navbar ul {
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        width: 600px;
+        justify-content: space-around;
+    }
+
+    header .navbar ul li {
+        font-size: 18px;
+    }
+
+    header .navbar ul li:hover {
+        color: rgb(126, 151, 113);
+        cursor: pointer;
+    }
+
+    input#toggle{
+        display: none;
+    }
+
+    label {
+        z-index: 2;
+        position: absolute;
+        top: 30px;
+        right: 10px;
+        cursor: pointer;
+        display: none;
+    }
+
+    label span {
+        display: block;
+        height: 3px;
+        width: 30px;
+        background: green;
+        margin: 5px 0;
+        transition: .3s;
+    }
+
+    label span:nth-child(1) {
+        margin-left: 20px;
+    }
+
+    label  span:nth-child(2) {
+        width: 50px;
+    }
+
+    #toggle:checked~label>span:nth-child(1) {
+        background: rgb(8, 8, 8);
+        transform: rotateZ(45deg);
+        width: 30px;
+        margin-top: 10px;
+    }
+
+    #toggle:checked~label>span:nth-child(2) {
+        background: rgb(0, 0, 0);
+        transform: rotateZ(-45deg);
+        width: 30px;
+        margin-top: -8px;
+        margin-left: 19px;
+    }
+
+    #toggle:checked~header .navbar {
+        left: 0;
+    }
+
+    @media (max-width:978px) {
+        label {
+            display: block;
+        }
+
+        header .navbar {
+            height: 100vh;
+            width: 100vw;
+            position: fixed;
+            top: 0;
+            left: 100%;
+            background: rgb(168, 236, 168);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header .navbar ul {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-flow: column wrap;
+        }
+
+        header .navbar ul li {
+            margin: 10px 0;
+            font-size: 40px;
+            color: rgb(0, 0, 0);
+        }
+
+        header .navbar ul li:hover {
+            background: rgb(25, 114, 65);
+            border-radius: 50px;
+            padding: 0 50px;
+            transition: .3s
+        }
+
+        header {
+            z-index: 1;
+            /* justify-content: center; */
+        }
+    }
+</style>
+</head>
+<body>
+  <input type="checkbox" id="toggle">
+    <label for="toggle">
+        <span></span>
+        <span></span>
+    </label>
+    <header>
+        <div class="logo">
+            <img src="assets/images/club.jpg" alt="">
+            {{user1.username}}
+        </div>
+        <div class="navbar">
+            <ul>
+              <li routerLink="/homepage">Home</li>
+              <li routerLink="/event">Event</li>
+              <li routerLink="/achieve">Certificate</li>
+              <li routerLink="/profile">Profile</li>
+              <!-- <li routerLink="/setting">Settings</li> -->
+              <li routerLink="/">Logout</li>
+            </ul>
+        </div>
+        <!-- <app-event></app-event> -->
+    </header>
+    <div class="container">
+      <div class="image">
+        <img class="iamge" src="assets/images/cul_art.gif">
+      </div>
+      <div class="text">
+        
+        
+        <h6>Culture is a way of life and expression of our ethos and core values .The Cultural Club-SARANG aims at moulding the personality of students and exposes them to a wide range of cultural events throughout the year. Apart from participating in a multitude of events, the students also get a firsthand experience of organizing and managing the events, and of course, 
+          it caters to the creative needs of the students.</h6>
+       <br><br><br>
+          <button routerLink="/comment-cultural" class="button">Chat</button>
+
+        </div>
+    </div>
+
+    <div class="grid image-grid">
+
+      <div class="grid-block">
+        <div class="tile">
+          <a class="tile-link" href="#">
+            <img class="tile-img tile-img1" src="assets/images/1.jpg" alt="Image">
+          </a>
+        </div>
+      </div>
+    
+      <div class="grid-block">
+        <div class="tile">
+          <a class="tile-link" href="#">
+            <img class="tile-img tile-img2" src="assets/images/2.jpg" alt="Image">
+          </a>
+        </div>
+      </div>
+    
+      <div class="grid-block">
+        <div class="tile">
+          <a class="tile-link" href="#">
+            <img class="tile-img tile-img3" src="assets/images/3.jpg" alt="Image">
+          </a>
+        </div>
+      </div>
+    
+      <div class="grid-block">
+        <div class="tile">
+          <a class="tile-link" href="#">
+            <img class="tile-img tile-img4" src="assets/images/4.jpg" alt="Image">
+          </a>
+        </div>
+      </div>
+    
+      <div class="grid-block">
+        <div class="tile">
+          <a class="tile-link" href="#">
+            <img class="tile-img tile-img5" src="assets/images/5.jpg" alt="Image">
+          </a>
+        </div>
+      </div>
+    
+      <div class="grid-block">
+        <div class="tile">
+          <a class="tile-link" href="#">
+            <img class="tile-img tile-img6" src="assets/images/6.jpg" alt="Image">
+          </a>
+        </div>
+      </div>
+    
+     
+    </div>
+
+    </body>
+    </html>
+
+
+
+  
