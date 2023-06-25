@@ -48,7 +48,7 @@ export class AdminComponent implements OnInit{
       console.log("data fetched: ", this.exform.value);
       this.service.registerUser(this.exform.value).subscribe((result: any)=>
       console.log(result));
-      localStorage.setItem('Users', JSON.stringify(this.exform.value));
+      // localStorage.setItem('Users', JSON.stringify(this.exform.value));
       this.userSubmitted = false;
       // alert("Submitted")
       alert("Event added");

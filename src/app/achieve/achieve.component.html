@@ -171,6 +171,17 @@
             </div>
             <!-- <app-event></app-event> -->
         </header>
+        <!-- <app-search
+        (searchTextChanged)="onSearchTextEntered($event)"></app-search> -->
+
+<app-filter [all]="getAllCer()"
+[Merit]="getMeritCer()"
+[Participation]="getPartCer()"
+
+(filterRadioButton)="onFilterRadio($event)"></app-filter>
+
+  
+
         <div class="hi">
          
         </div>
@@ -186,8 +197,8 @@
     
 
       <div *ngFor="let u of Obj">
-        <div class="container">
-            <div class="logo1">
+        <div class="container"*ngIf="chocolateCountRadio === 'All' || chocolateCountRadio === u.cer">
+            <div class="logo1" *ngIf="searchText ==='' || u.ename.toLowerCase().includes(searchText)">
                 <h1>BVRIT Hyderabad College of Engineering for Women</h1>
                 <h6>Bachupally, Hyderabad, India
                   <br>

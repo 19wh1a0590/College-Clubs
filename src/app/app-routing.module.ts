@@ -17,6 +17,8 @@ import { CommentEnglishComponent } from './comment-english/comment-english.compo
 import { EnglishComponent } from './english/english.component';
 import { AdmincertificateComponent } from './admincertificate/admincertificate.component';
 import { UserComponent } from './user/user.component';
+import { FilterComponent } from './filter/filter.component';
+import { SearchComponent } from './search/search.component';
 const routes: Routes = [
   {path:'', component: HomeComponent},
   {path:'login',component:LoginComponent},
@@ -35,6 +37,8 @@ const routes: Routes = [
   {path: 'comment-english',component:CommentEnglishComponent},
   {path: 'english',component:EnglishComponent,},
   {path: 'user',component:UserComponent,},
+  {path: 'filter',component:FilterComponent},
+  {path: 'search',component:SearchComponent},
 
   // {path: 'chat', component:ChatComponent}
 

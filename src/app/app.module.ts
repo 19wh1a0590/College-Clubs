@@ -29,6 +29,8 @@ import { CommentEnglishComponent } from './comment-english/comment-english.compo
 import { EnglishComponent } from './english/english.component';
 import { AdmincertificateComponent } from './admincertificate/admincertificate.component';
 import { UserComponent } from './user/user.component';
+import { FilterComponent } from './filter/filter.component';
+import { SearchComponent } from './search/search.component';
 // import {MatToolbarModule} from '@angular/material/toolbar';
 
 
@@ -56,6 +58,8 @@ import { UserComponent } from './user/user.component';
     EnglishComponent,
     AdmincertificateComponent,
     UserComponent,
+    FilterComponent,
+    SearchComponent,
    
 
 

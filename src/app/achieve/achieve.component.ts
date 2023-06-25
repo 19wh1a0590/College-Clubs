@@ -23,11 +23,33 @@ export class AchieveComponent implements OnInit{
   checkObj(users: any){
     if(users!==null){
 
-      this.Obj =users;
+      this.Obj = users;
       console.log("achieve.ts() " +this.Obj.ename);
     }
     else{
       alert("You didn't get any certificates yet!");    
     }
+  }
+
+  getAllCer(){
+    return this.Obj.length;
+  }
+  getMeritCer(){
+    return this.Obj.filter((Obj:any) => Obj.cer==='Merit').length;
+  }
+  getPartCer(){
+    return this.Obj.filter((Obj:any) => Obj.cer==='Participation').length;
+  }
+
+  chocolateCountRadio :string='All';
+  searchText:string='';
+
+  onFilterRadio(data: string){
+    this.chocolateCountRadio = data;
+    console.log(this.chocolateCountRadio);
+  }
+  onSearchTextEntered(searchValue:string){
+    this.searchText = searchValue;
+    console.log(this.searchText);
   }
 }

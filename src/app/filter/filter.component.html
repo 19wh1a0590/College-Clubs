@@ -1,0 +1,12 @@
+<!-- <p>filter works!</p> -->
+<div>
+    <input type="radio" name="filter" value="All" [(ngModel)]="selectedRadioButton"
+    (change)="onRadioButton()" />
+    <span>{{'All('+all+')'}} </span>
+    <input type="radio" name="filter" value="Merit" [(ngModel)]="selectedRadioButton" 
+    (change)="onRadioButton()" />
+    <span>{{'Merit('+Merit+')'}}</span>
+    <input type="radio" name="filter" value="Participation" [(ngModel)]="selectedRadioButton" 
+    (change)="onRadioButton()" />
+    <span>{{'Participation('+Participation+')'}}</span>
+</div>
